@@ -73,7 +73,7 @@ const server = new GraphQLServer({
     ...req,
     db: new Prisma({
       typeDefs: 'src/generated/prisma.graphql',
-      endpoint: 'https://us1.prisma.sh/public-viridianhealer-317/simple-store/dev',
+      endpoint: 'https://us1.prisma.sh/public-ebonychin-455/simple-store/dev',
       secret: 'mysecret123',
       debug: true,
     }),
