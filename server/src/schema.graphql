@@ -3,13 +3,9 @@
 type Query {
   user(
     id: ID!): User
-  product(
-    id: ID!): Product
-  cart(
-    user_id: ID!): Cart
   philosopher(
     id: ID!): Philosopher
-  allProducts: [Product]
+  allPhilosophers: [Philosopher]
   allUsers: [User]
 }
 ////////////////////////////
@@ -22,20 +18,6 @@ type Mutation {
     id: ID!,
     name: String,
     email: String): User
-//////////////////////////////
-  createProduct(
-    name: String!,
-    imgURL: String,
-    desc: String!,
-    price: Float!):Product
-  updateProduct(
-    id: ID!,
-    name: String,
-    imgURL: String,
-    desc: String,
-    price: Float):Product
-  deleteProduct(
-    id: ID!): Product
 /////////////////////////////////
   createPhilosopher(
     name: String!,
@@ -52,15 +34,8 @@ type Mutation {
     region: String,
     branch: String,
     resource: String): Philosopher
-/////////////////////////
-  addProductToCart(
-    user_id: ID!,
-    product_id: ID!): User
-  removeProductFromCart(
-    user_id: ID!,
-    product_id: ID!): User
-  clearCart(
-    user_id: ID!): User
+  deletePhilosopher(
+    id: ID!): Philosopher
 //////////////////////////////
   login(
     email: String!,
