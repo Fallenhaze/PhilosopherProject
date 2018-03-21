@@ -24,17 +24,17 @@ class Philosopher extends Component {
       <Paper className='philosopher' zDepth={2}>
         <h2>{philosopher.name}</h2>
         <img src={philosopher.imgURL} alt={'Not Available'}/>
-        <div>{philosopher.timePeriod}</div>
-        <div>{philosopher.region}</div>
-        <div>{philosopher.branch}</div>
-        <div>{philosopher.resource}</div>
+        <h4>{philosopher.timePeriod}</h4>
+        <h4>{philosopher.region}</h4>
+        <h4>{philosopher.branch}</h4>
+        <h4>{philosopher.resource}</h4>
         <ModalButton label="Update"
                      display={<UpdatePhilosopher
                        color="primary"
                        philosopher={philosopher}/>}/>
         <ModalButton label="Delete"
-                     display={DeletePhilosopher()}
-                     color="secondary"/>
+                     display={<DeletePhilosopher
+                     color="secondary"/>}/>
       </Paper>
     )
   }

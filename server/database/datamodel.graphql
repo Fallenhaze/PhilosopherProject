@@ -28,8 +28,8 @@ type Product {
 
 type Philosopher {
   id: ID! @unique
-  imgURL: String!
   name: String! @unique
+  imgURL: String!
   timePeriod: DateTime!
   region: String
   branch: String
