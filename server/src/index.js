@@ -22,6 +22,12 @@ const resolvers = {
         info
       )
     },
+    philosopher(parent, { id }, ctx, info){
+      return ctx.db.query.philosopher(
+        { where: { id } },
+          info
+      )
+    },
     allProducts(parent, {}, ctx, info) {
       return ctx.db.query.products({}, info)
     },
@@ -46,10 +52,25 @@ const resolvers = {
         info,
       )
     },
+    createPhilosopher(parent, { name, imgURL, timePeriod, region, branch, resource }, ctx, info) {
+      return ctx.db.mutation.createProduct(
+        { data: { name, timePeriod, region, branch, resource } },
+        info,
+      )
+    },
     updateProduct(parent, { id, name, imgURL, desc, price }, ctx, info) {
       return ctx.db.mutation.updateProduct(
         {
           data: { name, imgURL, desc, price },
+          where: { id }
+        },
+        info,
+      )
+    },
+    updatePhilosopher(parent, { id, name, imgURL, timePeriod, region, branch, resource  }, ctx, info) {
+      return ctx.db.mutation.updatePhilosopher(
+        {
+          data: { name, imgURL, timePeriod, region, branch, resource  },
           where: { id }
         },
         info,

@@ -25,3 +25,13 @@ type Product {
   desc: String!
   price: Float!
 }
+
+type Philosopher {
+  id: ID! @unique
+  imgURL: String!
+  name: String! @unique
+  timePeriod: DateTime!
+  region: String
+  branch: String
+  resource: String!
+}
