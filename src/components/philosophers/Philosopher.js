@@ -10,11 +10,11 @@ import UpdatePhilosopher from '../forms/UpdatePhilosopher'
 class Philosopher extends Component {
   render(){
     const {philosopher} = this.props
-    const DeletePhilosopher = () => {
+    const DeletePhilosopher = () => (
       <RaisedButton label='Confirm Delete'
                     onClick={handleClick}
       />
-    }
+    )
     const handleClick = async (e) => {
       e.preventDefault()
       await this.props.mutate()

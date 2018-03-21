@@ -69,11 +69,12 @@ class CreatePhilosopher extends Component {
 }
 
 const CREATE_PHILOSOPHER_MUTATION = gql`
-  mutation($name:String!, $imgURL:String!, $timePeriod: DateTime!, $region: String, $branch:String, $resource:String!){
+  mutation($name:String!, $imgURL:String!, $timePeriod:String!, $region: String, $branch:String, $resource:String!){
     createPhilosopher(
       name: $name,
       imgURL: $imgURL,
       timePeriod: $timePeriod,
+      region: $region,
       branch: $branch,
       resource: $resource
     ){

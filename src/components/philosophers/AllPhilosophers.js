@@ -10,9 +10,9 @@ import '../../styles/All.css'
 class AllPhilosophers extends Component {
   render(){
     const {allPhilosophers} = this.props.data
-    
-    return (!this.props.loading && allPhilosophers ) ? (
-      <section className='list'>
+    console.log(this.props.data)
+    return (!this.props.data.loading && allPhilosophers ) ? (
+      <section>
         {PhilosopherGrid(allPhilosophers)}
       </section>
     ) : <div>loading</div>
@@ -23,8 +23,8 @@ const PhilosopherGrid = (allPhilosophers) => (
   <GridList cols={5} cellHeight="auto" >
     <Subheader>Philosophers</Subheader>
     {allPhilosophers.map(philosopher =>(
-      <GridTile className="tile">
-        <Philosopher philosopher={philosopher} key={philosopher.id}/>
+      <GridTile className="tile" key={philosopher.id}>
+        <Philosopher philosopher={philosopher}/>
       </GridTile>
       
       )

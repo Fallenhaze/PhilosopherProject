@@ -3,20 +3,13 @@ type User {
   name: String!
   email: String! @unique
   pw: String!
-  cart: Cart
-}
-
-type CartProduct {
-  id: ID! @unique
-  cart: Cart!
-  product: Product!
 }
 
 type Philosopher {
   id: ID! @unique
   name: String! @unique
   imgURL: String!
-  timePeriod: DateTime!
+  timePeriod: String!
   region: String
   branch: String
   resource: String!

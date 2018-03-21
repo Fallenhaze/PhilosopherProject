@@ -18,8 +18,12 @@ const resolvers = {
     },
     allUsers(parent, {}, ctx, info) {
       return ctx.db.query.users({}, info)
+    },
+    allPhilosophers(parent, {}, ctx, info) {
+      return ctx.db.query.philosophers({}, info)
     }
   },
+  
   Mutation: {
     ...auth,
     updateUser(parent, { id, name, email, pw }, ctx, info) {
@@ -32,12 +36,12 @@ const resolvers = {
       )
     },
     createPhilosopher(parent, { name, imgURL, timePeriod, region, branch, resource }, ctx, info) {
-      return ctx.db.mutation.createProduct(
-        { data: { name, timePeriod, region, branch, resource } },
+      return ctx.db.mutation.createPhilosopher(
+        { data: { name, imgURL, timePeriod, region, branch, resource } },
         info,
       )
     },
-    updatePhilosopher(parent, { id, name, imgURL, timePeriod, region, branch, resource  }, ctx, info) {
+    updatePhilosopher(parent, { id, name, imgURL, timePeriod, region, branch, resource}, ctx, info) {
       return ctx.db.mutation.updatePhilosopher(
         {
           data: { name, imgURL, timePeriod, region, branch, resource  },
@@ -53,8 +57,8 @@ const resolvers = {
         },
         info
       )
-    }
-  },
+    },
+  }
 }
 
 const server = new GraphQLServer({

@@ -5,10 +5,9 @@ type Query {
     id: ID!): User
   philosopher(
     id: ID!): Philosopher
-  allPhilosophers: [Philosopher]
+  allPhilosophers: [Philosopher!]!
   allUsers: [User]
 }
-////////////////////////////
 type Mutation {
   createUser(
     name: String!,
@@ -18,11 +17,10 @@ type Mutation {
     id: ID!,
     name: String,
     email: String): User
-/////////////////////////////////
   createPhilosopher(
     name: String!,
     imgURL: String!,
-    timePeriod: DateTime!,
+    timePeriod: String!,
     region: String,
     branch: String,
     resource: String!): Philosopher
@@ -30,18 +28,16 @@ type Mutation {
     id: ID!,
     name: String!,
     imgURL: String
-    timePeriod: DateTime,
+    timePeriod: String,
     region: String,
     branch: String,
     resource: String): Philosopher
   deletePhilosopher(
     id: ID!): Philosopher
-//////////////////////////////
   login(
     email: String!,
     pw: String!): AuthPayload
 }
-/////////////////////////////
 type AuthPayload {
   token: String!
   user: User!

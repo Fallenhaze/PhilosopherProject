@@ -32,6 +32,7 @@ export class ModalButton extends Component {
                       label={label}
                       onClick={e => this.setState({ open: !this.state.open })} />
         <Dialog
+          autoScrollBodyContent={true}
           actions={<RaisedButton label='Close' onClick={e => this.setState({open: !this.state.open})}/>}
           open={this.state.open}
           onRequestClose={e => this.setState({open: !this.state.open})}>

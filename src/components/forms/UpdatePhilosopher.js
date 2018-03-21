@@ -74,7 +74,7 @@ render () {
 }
 
 const UPDATE_PHILOSOPHER_MUTATION = gql`
-  mutation($id: ID!, $name:String!, $imgURL:String!, $timePeriod: DateTime!, $region: String, $branch:String, $resource:String!){
+  mutation($id: ID!, $name:String!, $imgURL:String!, $timePeriod: String!, $region: String, $branch:String, $resource:String!){
     updatePhilosopher(
       id: $id
       name: $name,
