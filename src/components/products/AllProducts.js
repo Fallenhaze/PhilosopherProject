@@ -5,7 +5,7 @@ import {GridList, GridTile} from 'material-ui/GridList';
 import Subheader from 'material-ui/Subheader';
 
 import Product from './Product'
-import '../../styles/AllProducts.css'
+import '../../styles/All.css'
 
 class AllProducts extends Component {
   render(){
